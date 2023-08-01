@@ -1,7 +1,6 @@
 let cardCount = 0;
-
+let foodRecipes = [];
 // api fetch
-// let foodRecipes = [];
 // function fetchAPI(url){
 //   fetch(url)
 //   .then(res => res.json())
@@ -31,6 +30,9 @@ navBar.addEventListener('click', event => {
 const resultsContainer = document.querySelector('.results-container');
 resultsContainer.addEventListener('click', event => {
   if(event.target.className === 'modal-open-btn'){
+    const blurContainer = document.querySelector('.blur-container');
+    blurContainer.style.display = 'block';
+    document.body.style.overflow = 'hidden';
     const cardId = event.target.parentElement.parentElement.id;
     const findRecipeById = foodRecipes.meals.filter(foodRecipe => foodRecipe.idMeal === cardId);
     const modalContainer = document.querySelector('.modal-container');
@@ -53,6 +55,8 @@ resultsContainer.addEventListener('click', event => {
     `;
     return modalContainer.querySelector('.modal-close-btn-container').addEventListener('click', () => {
       modalContainer.classList.remove('show');
+      document.body.style.overflow = '';
+      blurContainer.style.display = 'none';
     })
   }
 })
@@ -94,7 +98,6 @@ searchInput.addEventListener('keyup', event =>{
       resultsContainer.innerHTML = '';
       cardCount = 0;
       foodRecipes = [];
-      console.log(keyword);
       fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${keyword}`)
       .then(res => res.json())
       .then(res => foodRecipes = res)
@@ -132,7 +135,6 @@ SearchBtn.addEventListener('click', event =>{
     resultsContainer.innerHTML = '';
     cardCount = 0;
     foodRecipes = [];
-    console.log(keyword);
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${keyword}`)
     .then(res => res.json())
     .then(res => foodRecipes = res)

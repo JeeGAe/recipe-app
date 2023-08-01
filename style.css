@@ -147,6 +147,17 @@ h1 {
   padding: 0.5rem 1.5rem;
 }
 
+.blur-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+  z-index: 2;
+}
+
 .modal-container {
   display: none;
   position: fixed;
@@ -162,6 +173,7 @@ h1 {
   text-align: center;
   border-radius: 15px;
   overflow: auto;
+  z-index: 3;
 }
 .modal-container.show {
   display: block;

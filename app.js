@@ -105,7 +105,7 @@ searchInput.addEventListener('keyup', event =>{
         // 스크롤 바가 생길때까지 카드 생성
         let scrollHeight = calculateScrollHeight();
         let clientHeight = document.documentElement.clientHeight;
-        while(scrollHeight <= clientHeight && cardCount < foodRecipes.meals.length){
+        while(scrollHeight === clientHeight && cardCount < foodRecipes.meals.length){
           createRecipeCard(foodRecipes.meals[cardCount]);
           scrollHeight = calculateScrollHeight();
           cardCount++;

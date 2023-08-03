@@ -116,7 +116,7 @@ h1 {
   top: 0;
   transition: 1s;
   width: 30%;
-  max-height: 30rem;
+  max-height: 50rem;
   min-height: 10rem;
   border-radius: 15px;
   box-shadow: 0 4px 5px 2px rgb(216, 216, 216);

@@ -170,7 +170,7 @@ window.addEventListener('scroll', event => {
     document.body.offsetHeight, document.documentElement.offsetHeight,
     document.body.clientHeight, document.documentElement.clientHeight
     );
-  if((window.pageYOffset + document.documentElement.clientHeight) > (scrollHeight - 10)){
+  if((window.pageYOffset + document.documentElement.clientHeight) > (scrollHeight - 300)){
     if(cardCount < foodRecipes.meals.length){
       if(document.documentElement.clientWidth >= 820){
         for(let i = 0; i < 3; i++){
